@@ -1,0 +1,18 @@
+Investigate 
+ 1086  kubectl get deployments -n udacity\n
+ 1087  kubectl get pods -n hello-world
+ 1088  kubectl describe deployment hello-world -n udacity\n
+ 1089  kubectl get services -n udacity
+ 1090  kubectl describe service hello-world -n udacity
+ 1091  kubectl get endpoints hello-world -n udacity\n
+ 1092  kubectl get pods -n udacity
+ 1093  kubectl describe pod hello-world-6464549999-skpmh\n
+ 1094  kubectl logs hello-world-6464549999-skpmh_udacity\n
+ 1095  kubectl logs hello-world-6464549999-skpmh
+At this stage, hello-world app is identified with the error of mis-configuration of health endpoint
+ 1096  kubectl apply -f starter/apps/hello-world
+Modify the hello.yml file, then re-initiate the app
+ 1097  ./initialize_k8s.sh
+ 1098  kubectl get pods -n udacity 
+ 1099  kubectl logs hello-world-844c8ccbb-6cscg
+Problem solved (see the attached png images)
