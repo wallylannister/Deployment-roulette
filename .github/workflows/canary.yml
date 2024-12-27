@@ -1,14 +1,17 @@
 name: Canary Deployment
 
 on:
-  push:
-    branches:
-      - main
+#  push:
+#    branches:
+#      - main
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: starter/apps/canary/
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -22,5 +25,5 @@ jobs:
 
       - name: Run canary deployment script
         run: |
-          chmod +x starter/apps/canary/canary.sh
-          starter/apps/canary/canary.sh
+          chmod +x ./canary.sh
+          ./canary.sh
