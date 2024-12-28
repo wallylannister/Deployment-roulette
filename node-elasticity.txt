@@ -1,0 +1,21 @@
+wally@Tuong-Vos-MacBook-Pro ~ % kubectl get pods -n udacity           
+NAME                                 READY   STATUS    RESTARTS   AGE
+bloaty-mcbloatface-9d8f7c958-7j55w   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-82nl4   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-9vg4z   1/1     Running   0          2m55s
+bloaty-mcbloatface-9d8f7c958-c69c8   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-dtn9n   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-h85s8   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-m44g7   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-mmgcn   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-qhbzz   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-rnntc   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-rq2cd   1/1     Running   0          2m55s
+bloaty-mcbloatface-9d8f7c958-shgl2   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-smsbm   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-tgq9s   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-ts2x5   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-vzgtd   1/1     Running   0          2m56s
+bloaty-mcbloatface-9d8f7c958-zvctr   1/1     Running   0          2m56s
+hello-world-844c8ccbb-w2kmt          1/1     Running   0          83m
+wally@Tuong-Vos-MacBook-Pro ~ % 

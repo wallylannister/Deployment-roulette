@@ -1,0 +1,37 @@
+1. Increase the node max size to 10, then run 
+terraform apply
+
+2. create a node autoscaling configuration by setting up an IAM Open ID connect provider
+eksctl utils associate-iam-oidc-provider \
+--cluster udacity-cluster \
+--approve \
+--region=us-east-2
+
+3. Create a cluster service account with IAM permissions
+eksctl create iamserviceaccount \
+--name cluster-autoscaler \
+--namespace kube-system \
+--cluster udacity-cluster \
+--attach-policy-arn "arn:aws:iam::1234567890:policy/udacity-k8s-autoscale" \ #replace with your arn here
+--approve --region us-east-2
+
+4. Apply the provided cluster_autoscale.yml configuration to create a service that will listen for events like Node capacity reached to automatically increase the number of nodes in the cluster
+kubectl apply -f cluster_autoscale.yml
+
+5. Re-run bloatware deployments
+kubectl delete -f bloatware.yml
+kubectl apply -f bloatware.yml
+
+6. Increase the container memory of cluster-autoscaler deployment if it crashes (Optional)
+spec:
+      serviceAccountName: cluster-autoscaler
+      containers:
+        - image: k8s.gcr.io/autoscaling/cluster-autoscaler:v1.21.0
+          name: cluster-autoscaler
+          resources:
+            limits:
+              cpu: 100m
+              memory: 1600Mi
+            requests:
+              cpu: 100m
+              memory: 1000Mi

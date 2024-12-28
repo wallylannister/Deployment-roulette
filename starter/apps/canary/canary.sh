@@ -19,8 +19,8 @@ function canary_deploy {
   NUM_OF_V2_PODS=$(kubectl get pods -n udacity | grep -c canary-v2)
   echo "V2 PODS: $NUM_OF_V2_PODS"
 
-  kubectl scale deployment canary-v2 --replicas=$((NUM_OF_V2_PODS + $DEPLOY_INCREMENTS))
-  kubectl scale deployment canary-v1 --replicas=$((NUM_OF_V1_PODS - $DEPLOY_INCREMENTS))
+  kubectl scale deployment canary-v2 --replicas=$((NUM_OF_V2_PODS + DEPLOY_INCREMENTS))
+  kubectl scale deployment canary-v1 --replicas=$((NUM_OF_V1_PODS - DEPLOY_INCREMENTS))
   # Check deployment rollout status every 1 second until complete.
   ATTEMPTS=0
   ROLLOUT_STATUS_CMD="kubectl rollout status deployment/canary-v2 -n udacity"
@@ -33,7 +33,10 @@ function canary_deploy {
 }
 
 # Initialize canary-v2 deployment
+kubectl apply -f index_v2_html.yml
+kubectl apply -f canary-svc-2.yml
 kubectl apply -f canary-v2.yml
+
 
 sleep 1
 # Begin canary deployment

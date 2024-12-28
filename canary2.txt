@@ -1,0 +1,18 @@
+wally@Tuong-Vos-MacBook-Pro ~ % kubectl get pods --all-namespaces
+NAMESPACE     NAME                          READY   STATUS        RESTARTS     AGE
+kube-system   aws-node-8nhwr                2/2     Running       0            121m
+kube-system   aws-node-mncrd                2/2     Running       0            119m
+kube-system   coredns-6b94694fcb-tfh6d      1/1     Running       0            116m
+kube-system   coredns-6b94694fcb-zhr76      1/1     Running       0            117m
+kube-system   kube-proxy-4dtz2              1/1     Running       0            121m
+kube-system   kube-proxy-t4txj              1/1     Running       0            119m
+udacity       blue-68f654b6f9-7npgq         1/1     Running       0            119m
+udacity       blue-68f654b6f9-9xk4l         1/1     Running       0            119m
+udacity       blue-68f654b6f9-ccsk7         1/1     Running       0            119m
+udacity       canary-v1-58cb5c49d-2pzjm     1/1     Running       0            6m51s
+udacity       canary-v2-55647dff9d-4nx66    1/1     Running       0            4m
+udacity       canary-v2-55647dff9d-g68n8    1/1     Running       0            4m
+udacity       canary-v2-55647dff9d-mkmfv    1/1     Running       0            4m10s
+udacity       debug                         1/1     Terminating   1 (6s ago)   2m55s
+udacity       hello-world-844c8ccbb-dwl8z   1/1     Running       0            119m
+wally@Tuong-Vos-MacBook-Pro ~ % 

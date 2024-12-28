@@ -1,0 +1,48 @@
+wally@Tuong-Vos-MacBook-Pro ~ % kubectl get svc -n udacity 
+NAME          TYPE           CLUSTER-IP       EXTERNAL-IP                                                                     PORT(S)        AGE
+blue-svc      LoadBalancer   172.20.222.207   a2563f5198acc49f3993288bee59a6f8-eba542089adc2406.elb.us-east-2.amazonaws.com   80:32512/TCP   12h
+canary-svc    ClusterIP      172.20.218.218   <none>                                                                          80/TCP         3m20s
+hello-world   LoadBalancer   172.20.206.5     a980c07dff59a4e9995187264fccfadb-13c38af61772e2f0.elb.us-east-2.amazonaws.com   80:30090/TCP   10h
+wally@Tuong-Vos-MacBook-Pro ~ % kubectl run debug --rm -i --tty --image nicolaka/netshoot -- /bin/bash
+If you don't see a command prompt, try pressing enter.
+debug:~# curl 172.20.218.218
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.218.218
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.218.218
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.218.218
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.218.218
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.218.218
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.218.218
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.218.218
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.218.218
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.218.218
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# 
